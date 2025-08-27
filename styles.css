@@ -1,0 +1,652 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #BC002D;     /* Traditional Japanese red */
+    --secondary-color: #FFB7C5;   /* Sakura pink */
+    --accent-color: #1B1B1B;      /* Japanese ink color */
+    --text-dark: #2C2C2C;
+    --text-light: #666;
+    --bg-light: #F7F7F7;
+    --white: #FFFFFF;
+    --bg-paper: #FFF9F2;         /* Traditional paper color */
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--secondary-color);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    opacity: 0.9;
+    background-image: url('images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><g fill="%23ffffff" fill-opacity="0.05"><path d="M60,0 C70,20 80,20 90,10 C80,30 90,40 110,40 C90,50 90,60 100,80 C80,70 70,80 60,100 C50,80 40,70 20,80 C30,60 30,50 10,40 C30,40 40,30 30,10 C40,20 50,20 60,0Z"/></g></svg>');
+    background-size: 120px 120px;
+    opacity: 0.1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+}
+
+.main-title {
+    font-family: var(--font-primary);
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    white-space: pre-line;
+}
+
+.hotel-title {
+    display: block;
+    margin-top: 1rem;
+    font-weight: normal;
+}
+
+.hero-content h2.highlight {
+    font-family: var(--font-primary);
+    font-size: 4rem;
+    color: var(--secondary-color);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.cta-button {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--secondary-color);
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-color);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.cta-button:hover {
+    color: var(--accent-color);
+}
+
+.cta-button:hover::before {
+    left: 0;
+}
+
+/* Welcome Section */
+.welcome {
+    padding: 6rem 0;
+    background: var(--bg-paper);
+    text-align: center;
+    position: relative;
+}
+
+.welcome::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M20,0 C25,10 30,10 35,5 C30,15 35,20 40,20 C35,25 30,25 35,35 C25,30 20,35 20,40 C20,35 15,30 5,35 C10,25 5,25 0,20 C5,20 10,15 5,5 C10,10 15,10 20,0" fill="%23BC002D" fill-opacity="0.03"/></svg>');
+}
+
+.welcome h2 {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.welcome p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    position: relative;
+}
+
+/* Accommodations Section */
+.accommodations {
+    padding: 6rem 0;
+}
+
+.accommodations h2 {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.room-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+}
+
+.room-image {
+    height: 250px;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+    position: relative;
+}
+
+.room-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.zen-room {
+    background-image: url('images/Room1.png');
+}
+
+.onsen-suite {
+    background-image: url('images/Room2.png');
+}
+
+.imperial-suite {
+    background-image: url('images/Room3.png');
+}
+
+.room-info {
+    padding: 2rem;
+}
+
+.room-info h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.room-info p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary-color) !important;
+}
+
+/* Family Suite Section */
+.family-suite {
+    padding: 6rem 0;
+    background: var(--bg-light);
+}
+
+.family-suite h2 {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.suite-description {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.experiences {
+    text-align: center;
+    padding: 6rem 0;
+    background: var(--bg-light);
+}
+
+.experiences-description {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.experiences-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.experience-item {
+    text-align: center;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-10px);
+}
+
+.experience-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.onsen-exp {
+    background-image: url('images/Traditional_onsen.png');
+}
+
+.tea-ceremony {
+    background-image: url('images/Tea_ceremony.png');
+}
+
+.meditation {
+    background-image: url('images/Zen_meditacion.jpg');
+}
+
+.experience-item h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.experience-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.suite-image::after {
+    content: '🛏️';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    opacity: 0.7;
+}
+
+/* Offers Section */
+.offers {
+    padding: 6rem 0;
+}
+
+.offers h2 {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.offer-card {
+    background: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.offer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.offer-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M60,0 C70,20 80,20 90,10 C80,30 90,40 110,40 C90,50 90,60 100,80" fill="none" stroke="%23BC002D" stroke-width="1" stroke-opacity="0.1"/></svg>');
+    opacity: 0.1;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+}
+
+.offer-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* Press Section */
+.press {
+    padding: 6rem 0;
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.press h2 {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.testimonial cite {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* Contact Section */
+.contact {
+    padding: 6rem 0;
+    background: var(--bg-light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+}
+
+.contact-info h3 {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.social-media h3 {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    display: inline-block;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Footer */
+.footer {
+    background: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .room-grid,
+    .suite-gallery,
+    .offers-grid,
+    .testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .accommodations h2,
+    .family-suite h2,
+    .offers h2,
+    .press h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loading animation */
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Reset hero styles */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-text {
+    font-family: var(--font-primary);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content .highlight {
+    font-family: var(--font-primary);
+    font-size: 4rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Ensure proper text display */
+.hero-content div {
+    display: block;
+    line-height: 1.2;
+}

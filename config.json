@@ -1,0 +1,79 @@
+{
+  "site": {
+    "title": "The Wellhall Resort & Spa Hotel",
+    "description": "Luxurious accommodations and world-class amenities",
+    "url": "https://wellhall-resort.com",
+    "language": "en",
+    "charset": "UTF-8"
+  },
+  "contact": {
+    "address": "123 Anywhere St., Any City ST 12345",
+    "phone": "1123-456-7890",
+    "email": "hello@reallygreatsite.com",
+    "hours": {
+      "weekdays": "9:00 am to 6:00 pm",
+      "saturday": "9:00 am to 12:00 noon",
+      "sunday": "Closed"
+    }
+  },
+  "social": {
+    "instagram": "#",
+    "facebook": "#",
+    "twitter": "#"
+  },
+  "rooms": [
+    {
+      "name": "De Luxe Room",
+      "capacity": "2 adults | 1 child below 7",
+      "price": 189,
+      "image": "images/deluxe-room.jpg"
+    },
+    {
+      "name": "De Luxe Sea View",
+      "capacity": "2 adults | 1 child below 7", 
+      "price": 209,
+      "image": "images/deluxe-sea-view.jpg"
+    },
+    {
+      "name": "The Wellhall Family Suite",
+      "capacity": "4 adults | 2 children below 7",
+      "price": 399,
+      "image": "images/family-suite.jpg"
+    }
+  ],
+  "offers": [
+    {
+      "title": "Early Bird Discount",
+      "description": "List your offers, promos, or special membership privileges and perks here to entice people to book your property."
+    },
+    {
+      "title": "Wellhall Members Club",
+      "description": "List your offers, promos, or special membership privileges and perks here to entice people to book your property."
+    },
+    {
+      "title": "Book 3 Nights, Get 1 Night Free",
+      "description": "List your offers, promos, or special membership privileges and perks here to entice people to book your property."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Boost your product and service's credibility by adding testimonials from your clients. People love recommendations so feedback from others who've tried it is invaluable.",
+      "source": "Santa Solana Post"
+    },
+    {
+      "quote": "Boost your product and service's credibility by adding testimonials from your clients. People love recommendations so feedback from others who've tried it is invaluable.",
+      "source": "Mariana's Luxe Travels"
+    },
+    {
+      "quote": "Boost your product and service's credibility by adding testimonials from your clients. People love recommendations so feedback from others who've tried it is invaluable.",
+      "source": "Fairhill Journal"
+    }
+  ],
+  "theme": {
+    "primaryColor": "#8B4513",
+    "secondaryColor": "#D4AF37",
+    "accentColor": "#F5DEB3",
+    "fontPrimary": "Playfair Display",
+    "fontSecondary": "Open Sans"
+  }
+}

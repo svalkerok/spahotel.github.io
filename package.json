@@ -1,0 +1,40 @@
+{
+  "name": "wellhall-resort-website",
+  "version": "1.0.0",
+  "description": "Luxury resort website for The Wellhall Resort & Spa Hotel",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'Open index.html in your browser'",
+    "dev": "echo 'Development server can be started with any local server tool'",
+    "build": "echo 'Static website - no build process needed'",
+    "deploy": "echo 'Upload files to your web server'"
+  },
+  "keywords": [
+    "hotel",
+    "resort",
+    "spa",
+    "luxury",
+    "website",
+    "responsive",
+    "html5",
+    "css3",
+    "javascript"
+  ],
+  "author": "The Wellhall Resort & Spa Hotel",
+  "license": "MIT",
+  "homepage": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "local"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
